@@ -16,6 +16,10 @@ export default [
           jsx: true,
         },
       },
+      globals: {
+        document: true,
+        window: true,
+      },
     },
     plugins: {
       react: react,
@@ -23,8 +27,12 @@ export default [
       "jsx-a11y": jsxA11y,
     },
     rules: {
-      "react/react-in-jsx-scope": "off",
-      "react/prop-types": "off",
+      "react/react-in-jsx-scope": "off", // React не нужен в JSX с версии 17
+      "react/prop-types": "off", // Отключает проверку PropTypes
+      "no-unused-vars": [
+        "error",
+        { varsIgnorePattern: "^(React|App)$" }, // Игнорируем React и App
+      ],
     },
   },
   prettier,
