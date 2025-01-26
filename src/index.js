@@ -1,3 +1,4 @@
+import React from "react"; // Этот импорт обязателен для JSX
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { App } from "./app.js";
